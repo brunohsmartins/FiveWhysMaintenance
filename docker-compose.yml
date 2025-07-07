@@ -1,0 +1,18 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      # usa o Dockerfile que está em ./backend/Dockerfile
+    ports:
+      - "8001:8001"
+    environment:
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
+
+  frontend:
+    build:
+      context: ./frontend
+      # usa o Dockerfile que está em ./frontend/Dockerfile
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
