@@ -1,0 +1,3 @@
+# não versionar credenciais
+.env
+*.bat
