@@ -62,7 +62,7 @@ def analisar_falha(input_data: WhyAnalysisRequest, db, modelo_usuario: str = Non
                 }
             ],
             temperature=0.5,
-            max_tokens=700
+            max_tokens=600
         )
 
         # Extrai e ajusta o texto de resposta
