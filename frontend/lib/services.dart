@@ -2,18 +2,16 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class ApiService {
-  // Passa a ser só o caminho, sem host nem porta
-  static const String apiEndpoint = '/analisar';
+  // 1) URL completa do seu túnel ngrok + caminho
+  static const String apiUrl = 'https://6d6b4c1a7f03.ngrok-free.app/analisar';
 
   // Alias para usar o Claude 3 Sonnet via OpenRouter
-  static const String modelAlias = "claude";
+  static const String modelAlias = 'claude';
 
-  /// Envia a falha e o alias de modelo ao backend,
-  /// que vai mapear "claude" para anthropic/claude-3-sonnet.
   static Future<Map<String, dynamic>> analyze(String failure) async {
     try {
-      // Agora criamos uma URI relativa
-      final uri = Uri(path: apiEndpoint);
+      // 2) Agora já temos a URI completa
+      final uri = Uri.parse(apiUrl);
 
       final response = await http.post(
         uri,
@@ -27,12 +25,10 @@ class ApiService {
       if (response.statusCode == 200) {
         return jsonDecode(utf8.decode(response.bodyBytes));
       } else {
-        throw Exception(
-          "Erro na análise: ${response.statusCode} - ${response.body}"
-        );
+        throw Exception("Erro na análise: ${response.statusCode} - ${response.body}");
       }
     } catch (e) {
-      throw Exception("Erro ao conectar com o backend.");
+      throw Exception("Erro ao conectar com o backend: $e");
     }
   }
 }
