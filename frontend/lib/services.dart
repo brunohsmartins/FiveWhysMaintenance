@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 
 class ApiService {
   // 1) URL completa do seu túnel ngrok + caminho
-  static const String apiUrl = 'https://6d6b4c1a7f03.ngrok-free.app/analisar';
+  static const String apiUrl = 'https://4985a5abc295.ngrok-free.app/analisar';
 
   // Alias para usar o Claude 3 Sonnet via OpenRouter
   static const String modelAlias = 'claude';
