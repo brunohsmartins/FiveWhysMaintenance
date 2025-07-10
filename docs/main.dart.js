@@ -23979,7 +23979,7 @@ Vj(a){return A.ayz(a)},
 ayz(a){var s=0,r=A.T(t.a),q,p=2,o=[],n,m,l,k,j,i,h
 var $async$Vj=A.U(function(b,c){if(b===1){o.push(c)
 s=p}while(true)switch(s){case 0:p=4
-n=A.ii("https://25e1809d9472.ngrok-free.app/analisar")
+n=A.ii("https://6d6b4c1a7f03.ngrok-free.app/analisar")
 k=t.N
 j=A.ao(["Content-Type","application/json"],k,k)
 s=7
